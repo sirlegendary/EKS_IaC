@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aws-auth
+  namespace: kube-system
+data:
+  mapRoles: |
+    - roleArn: 
+      userName:
+      groups:
+        - system:bootstrappers
+        - system:nodes
+  # deprek8ion
+  # kube-no-trouble       
