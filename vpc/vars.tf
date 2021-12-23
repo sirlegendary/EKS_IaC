@@ -17,3 +17,8 @@ variable "application_public_subnets_ip_lists" {
 variable "aws_region" {
   type = string
 }
+
+variable "region" {
+  type = string
+  default = "us-east-1"
+}
