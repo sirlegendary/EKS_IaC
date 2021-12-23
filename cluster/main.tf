@@ -1,6 +1,6 @@
 module "eks_cluster" {
   source                  = "app.terraform.io/legendary-org/module-eks-cluster/aws"
-  version                 = "0.0.1"
+  version                 = "~> 0.0.1"
   vpc_id                  = var.vpc_id
   public_subnets          = var.public_subnet_ids
   private_subnets         = var.private_subnet_ids
