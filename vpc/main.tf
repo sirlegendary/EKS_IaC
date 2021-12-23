@@ -1,6 +1,3 @@
-provider "aws" {
-  region = var.region
-}
 module "vpc" {
   source  = "app.terraform.io/legendary-org/module-vpc/aws"
   version = "0.0.1"
