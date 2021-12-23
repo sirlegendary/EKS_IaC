@@ -1,0 +1,10 @@
+apiVersion: rbac.authorizationlk8s.io/v1
+kind: Role
+metadata:
+   name: dev-role
+   namespace: 
+rules:
+- apiGroups: [""]
+  resources: [""]
+  verbs:     [""]
+  
