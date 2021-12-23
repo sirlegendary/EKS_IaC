@@ -1,4 +1,4 @@
-module "module-vpc" {
+module "vpc" {
   source  = "app.terraform.io/legendary-org/module-vpc/aws"
   version = "0.0.1"
   
