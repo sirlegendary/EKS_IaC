@@ -11,17 +11,17 @@ output "cluster_version" {
 }
 
 output "cluster_api" {
-  value = module.ekslearningcluster.cluster_api
+  value = module.eks_cluster.cluster_api
 }
 
 output "cluster_tag" {
-  value = module.ekslearningcluster.cluster_tag
+  value = module.eks_cluster.cluster_tag
 }
 
 output "worker_iam_role_arn" {
-  value = module.ekslearningcluster.worker_iam_role_arn
+  value = module.eks_cluster.worker_iam_role_arn
 }
 
 output "authconfig" {
-  value = module.ekslearningcluster.authconfig
+  value = module.eks_cluster.authconfig
 }
