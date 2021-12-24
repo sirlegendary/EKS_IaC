@@ -7,7 +7,7 @@ resource "kubernetes_deployment_v1" "calculator" {
   }
 
   spec {
-    replicas = 2
+    replicas = 20
     selector {
       match_labels = {
         App = "calculator"
