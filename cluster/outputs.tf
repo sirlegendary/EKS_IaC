@@ -36,5 +36,5 @@ output "authconfig" {
 }
 
 output "eks_cp_ca" {
-  value = module.eks.eks_cp_ca
+  value = module.eks_cluster.eks_cp_ca
 }
