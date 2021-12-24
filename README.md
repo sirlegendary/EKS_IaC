@@ -34,3 +34,8 @@ kubectl get nodes
 ```
 kubectl get deployments
 ```
+
+## List Services
+```
+kubectl get svc
+```
