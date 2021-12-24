@@ -11,12 +11,23 @@ AWS_SECRET_ACCESS_KEY
 aws eks --region us-east-1 update-kubeconfig --name eks-dev-cluster-eks-dev-cluster
 ```
 ```
+# If terraform is ran via CLI
 aws eks --region $(terraform output -raw region) update-kubeconfig --name $(terraform output -raw cluster_name)
 ```
 
 ## Confirm the cluster is up and running.
 ```
 kubectl get cs
+```
+
+## Connect worker nodes to control panel
+```
+kubectl create -f authconfig.yaml
+```
+
+## List active Nodes
+```
+kubectl get nodes
 ```
 
 ## Check deployments
