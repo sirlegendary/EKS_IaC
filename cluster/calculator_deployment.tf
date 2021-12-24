@@ -24,9 +24,9 @@ resource "kubernetes_deployment" "calculator" {
           image = "sirlegendary/cryptocalculator"
           name  = "calculator"
 
-          port {
-            container_port = 80
-          }
+        #   port {
+        #     container_port = 80
+        #   }
 
           resources {
             limits = {
