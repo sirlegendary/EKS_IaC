@@ -18,7 +18,7 @@ provider "aws" {
 
 provider "kubernetes" {
   host                   = module.eks_cluster.cluster_api
-  cluster_ca_certificate = base64decode(module.eks_cluster.eks_cp_ca)
+  cluster_ca_certificate = base64decode(module.eks_cluster.certificate_authority)
   exec {
     api_version = "client.authentication.k8s.io/v1alpha1"
     command     = "aws"

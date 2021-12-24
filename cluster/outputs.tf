@@ -34,7 +34,3 @@ output "worker_iam_role_arn" {
 output "authconfig" {
   value = module.eks_cluster.authconfig
 }
-
-output "certificate_authority" {
-  value = module.eks_cluster.certificate_authority
-}
