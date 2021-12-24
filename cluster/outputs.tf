@@ -35,6 +35,6 @@ output "authconfig" {
   value = module.eks_cluster.authconfig
 }
 
-output "eks_cp_ca" {
+output "certificate_authority" {
   value = module.eks_cluster.eks_cp_ca
 }
