@@ -14,18 +14,6 @@ variable "workers_storage_size" {
   type = string
 }
 
-variable "vpc_id" {
-  type = string
-}
-
-variable "public_subnet_ids" {
-  type = list(string)
-}
-
-variable "private_subnet_ids" {
-  type = list(string)
-}
-
 variable "workers_instance_type" {
   type = string
 }
@@ -52,8 +40,4 @@ variable "application_private_subnets_ip_lists" {
 
 variable "application_public_subnets_ip_lists" {
   type = list(string)
-}
-
-variable "aws_region" {
-  type = string
 }
