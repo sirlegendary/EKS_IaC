@@ -12,6 +12,6 @@ resource "kubernetes_service" "calc_service" {
       target_port = 80
     }
 
-    type = "NodePort"
+    type = "LoadBalancer"
   }
 }
