@@ -1,9 +1,18 @@
+output "vpc_id" {
+  value = module.vpc.application_vpc
+}
+output "private_subnets" {
+  value = module.vpc.application_private_subnets
+}
+output "public_subnets" {
+  value = module.vpc.application_public_subnets
+}
 output "aws_region" {
   value = var.aws_region
 }
 
 output "cluster_full_name" {
-  value = "${var.clusters_name}-${terraform.workspace}"
+  value = "${var.clusters_name}"
 }
 
 output "cluster_version" {

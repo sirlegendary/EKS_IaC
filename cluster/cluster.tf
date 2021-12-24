@@ -1,10 +1,10 @@
 module "eks_cluster" {
   source                  = "app.terraform.io/legendary-org/module-eks-cluster/aws"
   version                 = "~> 0.0.1"
-  vpc_id                  = var.vpc_id
-  public_subnets          = var.public_subnet_ids
-  private_subnets         = var.private_subnet_ids
-  cluster_name            = "${var.clusters_name}-${terraform.workspace}"
+  vpc_id                  = module.vpc.application_vpc
+  public_subnets          = module.vpc.application_public_subnets
+  private_subnets         = module.vpc.application_private_subnets
+  cluster_name            = "${var.clusters_name}"
   eks_cluster_k8s_version = var.eks_cluster_k8s_version
   workers_instance_type   = var.workers_instance_type
   workers_ami_id          = data.aws_ssm_parameter.workers_ami_id.value
@@ -18,7 +18,7 @@ module "eks_cluster" {
 locals {
   common_tags = {
     ManagedBy   = "terraform"
-    ClusterName = "${var.clusters_name}-${terraform.workspace}"
+    ClusterName = "${var.clusters_name}"
   }
 }
 
