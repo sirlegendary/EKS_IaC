@@ -1,32 +1,31 @@
-resource "kubernetes_deployment" "calculator" {
+resource "kubernetes_deployment" "example" {
   metadata {
-    name = "calculator"
+    name = "terraform-example"
     labels = {
-      App = "calculator"
+      test = "MyExampleApp"
     }
   }
 
   spec {
-    replicas = 2
+    replicas = 3
+
     selector {
       match_labels = {
-        App = "calculator"
+        test = "MyExampleApp"
       }
     }
+
     template {
       metadata {
         labels = {
-          App = "calculator"
+          test = "MyExampleApp"
         }
       }
+
       spec {
         container {
-          image = "sirlegendary/cryptocalculator"
-          name  = "calculator"
-
-        #   port {
-        #     container_port = 80
-        #   }
+          image = "nginx:1.7.8"
+          name  = "example"
 
           resources {
             limits = {
@@ -37,6 +36,21 @@ resource "kubernetes_deployment" "calculator" {
               cpu    = "250m"
               memory = "50Mi"
             }
+          }
+
+          liveness_probe {
+            http_get {
+              path = "/nginx_status"
+              port = 80
+
+              http_header {
+                name  = "X-Custom-Header"
+                value = "Awesome"
+              }
+            }
+
+            initial_delay_seconds = 3
+            period_seconds        = 3
           }
         }
       }
