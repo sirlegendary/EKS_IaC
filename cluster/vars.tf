@@ -42,18 +42,18 @@ variable "application_public_subnets_ip_lists" {
   type = list(string)
 }
 
-variable "map_roles" {
-  description = "Additional IAM roles to add to the aws-auth configmap."
-  type = list(object({
-    rolearn  = string
-    username = string
-    groups   = list(string)
-  }))
-  default = [
-    {
-      rolearn  = "arn:aws:iam::222282858006:role/eks-dev-cluster-workers"
-      username = "system:node:{{EC2PrivateDNSName}}"
-      groups   = ["system:bootstrappers", "system:nodes"]
-    },
-  ]
-}
+# variable "map_roles" {
+#   description = "Additional IAM roles to add to the aws-auth configmap."
+#   type = list(object({
+#     rolearn  = string
+#     username = string
+#     groups   = list(string)
+#   }))
+#   default = [
+#     {
+#       rolearn  = "arn:aws:iam::222282858006:role/eks-dev-cluster-workers"
+#       username = "system:node:{{EC2PrivateDNSName}}"
+#       groups   = ["system:bootstrappers", "system:nodes"]
+#     },
+#   ]
+# }
