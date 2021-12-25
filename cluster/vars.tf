@@ -49,5 +49,11 @@ variable "map_roles" {
     username = string
     groups   = list(string)
   }))
-  default = []
+  default = [
+    {
+      rolearn  = module.eks_cluster.worker_iam_role_arn
+      username = "system:node:{{EC2PrivateDNSName}}"
+      groups   = ["system:bootstrappers", "system:nodes"]
+    },
+  ]
 }
