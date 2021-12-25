@@ -51,7 +51,7 @@ variable "map_roles" {
   }))
   default = [
     {
-      rolearn  = module.eks_cluster.worker_iam_role_arn
+      rolearn  = "arn:aws:iam::222282858006:role/eks-dev-cluster-workers"
       username = "system:node:{{EC2PrivateDNSName}}"
       groups   = ["system:bootstrappers", "system:nodes"]
     },
