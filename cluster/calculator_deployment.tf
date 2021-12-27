@@ -42,5 +42,5 @@ resource "kubernetes_deployment_v1" "calculator" {
       }
     }
   }
-#   depends_on = [kubernetes_config_map_v1.auth_config,]
+  depends_on = [kubernetes_config_map_v1.auth_config,]
 }

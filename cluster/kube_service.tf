@@ -14,5 +14,5 @@ resource "kubernetes_service" "calc_service" {
 
     type = "LoadBalancer"
   }
-#   depends_on = [kubernetes_deployment_v1.calculator]
+  depends_on = [kubernetes_deployment_v1.calculator]
 }

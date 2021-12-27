@@ -13,5 +13,5 @@ resource "kubernetes_config_map_v1" "auth_config" {
             username: system:node:{{EC2PrivateDNSName}}
         YAML
   }
-  # depends_on = [ module.eks_cluster.cluster_api ]
+  depends_on = [ module.eks_cluster.cluster_api ]
 }
