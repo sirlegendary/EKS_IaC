@@ -4,6 +4,6 @@ module "vpc" {
   
   application_name                      = var.application_name
   application_vpc_block                 = var.application_vpc_block
-  application_public_subnets_ip_lists   = [for k, v in data.aws_availability_zones.available.names : cidrsubnet(var.application_vpc_block, 8, k)]
-  application_private_subnets_ip_lists  = [for k, v in data.aws_availability_zones.available.names : cidrsubnet(var.application_vpc_block, 8, k + 10)]
+  application_public_subnets_ip_lists   = var.application_public_subnets_ip_lists 
+  application_private_subnets_ip_lists  = var.application_private_subnets_ip_lists
 }
