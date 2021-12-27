@@ -30,3 +30,5 @@ provider "kubernetes" {
     ]
   }
 }
+
+data "aws_availability_zones" "available" {}

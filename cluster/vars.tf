@@ -34,13 +34,13 @@ variable "application_name" {
   type = string
 }
 
-variable "application_private_subnets_ip_lists" {
-  type = list(string)
-}
+# variable "application_private_subnets_ip_lists" {
+#   type = list(string)
+# }
 
-variable "application_public_subnets_ip_lists" {
-  type = list(string)
-}
+# variable "application_public_subnets_ip_lists" {
+#   type = list(string)
+# }
 
 # variable "map_roles" {
 #   description = "Additional IAM roles to add to the aws-auth configmap."
@@ -57,3 +57,4 @@ variable "application_public_subnets_ip_lists" {
 #     },
 #   ]
 # }
+
