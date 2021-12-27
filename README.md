@@ -8,7 +8,7 @@ AWS_SECRET_ACCESS_KEY
 
 ## Configure 'kubectl' to interact with your EKS cluster.
 ```
-aws eks --region us-east-1 update-kubeconfig --name eks-dev-cluster-eks-dev-cluster
+aws eks --region us-east-1 update-kubeconfig --name eks-dev-cluster
 ```
 ```
 # If terraform is ran via CLI
