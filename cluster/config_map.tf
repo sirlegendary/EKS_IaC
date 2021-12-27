@@ -4,7 +4,6 @@ resource "kubernetes_config_map_v1" "auth_config" {
     namespace = "kube-system"
   }
   data = {
-    mapRoles = var.map_roles
     api_host = module.eks_cluster.cluster_api
         mapRoles =<<YAML
             - groups:
