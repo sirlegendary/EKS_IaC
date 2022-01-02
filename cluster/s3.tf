@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "eks_s3" {
-  bucket = "eks_django_application_bucket"
+  bucket = "eks-django-application-bucket"
   acl    = "public-read-write"
 }
 
